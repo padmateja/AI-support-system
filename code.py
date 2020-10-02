@@ -3,10 +3,12 @@ import matplotlib.pyplot as plt
 import pandas as pd
 dataset = pd.read_csv('C:\\Users\chinn\Desktop\dataset1.csv')
 dataset.head()
+dataset["humidity"].plot hist() # it will help to analize the data and it's an inbult function in pandas and can be done to others for visualization of data.
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 5].values
+dataset.show(view = 'scatter plot' , x = "temperature",y = "humidity") #help you to analize the data
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state = 1)# it will help the training and test data to be stable whenever this code is run.
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 scaler.fit(X_train)
